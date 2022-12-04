@@ -1,0 +1,177 @@
+{% extends "base.html" %}
+{% block title %}Portal SIMMSE{% endblock %}
+{% block head %}
+{{ super() }}
+{% block customCSS %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/sidebar.css') }}" />
+<link rel="stylesheet" href="{{ url_for('static', filename='css/form.css') }}" />
+{% endblock %}
+{% endblock %}
+{% block body %}
+<body>
+  <!-- sidebar -->
+  <div class="area"></div>
+    <nav class="main-menu">
+      <ul>
+        <li>
+          <a href="http://justinfarrow.com">
+            <i class="fa fa-home fa-2x"></i>
+            <span class="nav-text"> Dashboard </span>
+          </a>
+        </li>
+        <li class="has-subnav">
+          <a href="#">
+            <i class="fa fa-laptop fa-2x"></i>
+            <span class="nav-text"> Stars Components </span>
+          </a>
+        </li>
+        <li class="has-subnav">
+          <a href="#">
+            <i class="fa fa-list fa-2x"></i>
+            <span class="nav-text"> Forms </span>
+          </a>
+        </li>
+        <li class="has-subnav">
+          <a href="#">
+            <i class="fa fa-folder-open fa-2x"></i>
+            <span class="nav-text"> Pages </span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class="fa fa-bar-chart-o fa-2x"></i>
+            <span class="nav-text"> Graphs and Statistics </span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class="fa fa-font fa-2x"></i>
+            <span class="nav-text"> Quotes </span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class="fa fa-table fa-2x"></i>
+            <span class="nav-text"> Tables </span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class="fa fa-map-marker fa-2x"></i>
+            <span class="nav-text"> Maps </span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class="fa fa-info fa-2x"></i>
+            <span class="nav-text"> Documentation </span>
+          </a>
+        </li>
+      </ul>
+
+      <ul class="logout">
+        <li>
+          <a href="#">
+            <i class="fa fa-power-off fa-2x"></i>
+            <span class="nav-text"> Logout </span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  <!-- form -->
+  <div class="container">
+    <h1 class="form-title">Alta IMMS</h1>
+    <form action="#">
+      <div class="main-user-info">
+        <div class="user-input-box">
+          <label for="fullName">Registro patronal</label>
+          <input
+            type="text"
+            id="fullName"
+            name="fullName"
+            placeholder="Ingresa registro patronal"
+          />
+        </div>
+        <div class="user-input-box">
+          <label for="username">N. seguro social</label>
+          <input
+            type="text"
+            id="username"
+            name="username"
+            placeholder="Ingresa número de seguro social"
+          />
+        </div>
+        <div class="user-input-box">
+          <label for="username">CURP</label>
+          <input
+            type="text"
+            id="username"
+            name="username"
+            placeholder="Ingresa CURP"
+          />
+        </div>
+        <div class="user-input-box">
+          <label for="username">Unidad médica familiar</label>
+          <input
+            type="text"
+            id="username"
+            name="username"
+            placeholder="Ingresa unidad médica familiar"
+          />
+        </div>
+        <div class="user-input-box">
+          <label for="email">Apellido paterno</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Ingresa apellido paterno"
+          />
+        </div>
+        <div class="user-input-box">
+          <label for="phoneNumber">Apellido Materno</label>
+          <input
+            type="text"
+            id="phoneNumber"
+            name="phoneNumber"
+            placeholder="Ingresa apellido materno"
+          />
+        </div>
+        <div class="user-input-box">
+          <label for="password">Nombre/s</label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            placeholder="Ingresa Nombre/s"
+          />
+        </div>
+        <div class="user-input-box">
+          <label for="confirmPassword">Fecha de nacimiento</label>
+          <input
+            type="date"
+            id="fechaNacimiento"
+            name="fechaNacimiento"
+            min="01-01-1800"
+            max="31-12-2050"
+          />
+        </div>
+      </div>
+      <div class="gender-details-box">
+        <span class="gender-title">Género</span>
+        <div class="gender-category">
+          <input type="radio" name="gender" id="male" />
+          <label for="male">Másculino</label>
+          <input type="radio" name="gender" id="female" />
+          <label for="female">Femenino</label>
+          <input type="radio" name="gender" id="other" />
+          <label for="other">Otro</label>
+        </div>
+      </div>
+      <div class="form-submit-btn">
+        <input type="submit" value="Registro" />
+      </div>
+    </form>
+  </div>
+</body>
+{% endblock %}

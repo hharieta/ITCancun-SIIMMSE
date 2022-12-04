@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% block head %}
+    <title>{% block title %}{% endblock %}</title>
+    <http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0" />
+    <!-- google font import -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat&family=Open+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <!-- icon -->
+    <link rel="icon" href="{{ url_for('static', filename='img/icons8-home-infographic-16.png') }}" />
+    <!-- icons -->
+    <script src="https://kit.fontawesome.com/967737f4f0.js" crossorigin="anonymous"></script>
+    <!-- Custom CSS -->
+    {% block customCSS %}{% endblock %}
+    {% endblock %}
+</head>
+
+<body>
+    {% block body %}
+    {% endblock %}
+</body>
+{% block javascript %}
+{% endblock %}
+</html>

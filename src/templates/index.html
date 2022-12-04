@@ -1,0 +1,723 @@
+{% extends "base.html" %}
+{% block title %}SIMMSE{% endblock %}
+{% block head %}
+{{ super() }}
+{% block customCSS %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/footer.css') }}" />
+<link rel="stylesheet" href="{{ url_for('static', filename='css/tecnm.css') }}" />
+<link rel="stylesheet" href="{{ url_for('static', filename='css/cards.css') }}" />
+<link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrapXP.css') }}" />
+
+{% endblock %}
+{% endblock %}
+{% block body %}
+<!-- header -->
+
+<header>
+  <div class="disclaimer_box"></div>
+  <div class="header-top paddingAside15 clearFix">
+    <div class="col-3 col-mob-4 white-logo padding5 floatLeft">
+      <img
+        src="{{ url_for('static', filename='img/gobierno-de-mexico.svg') }}"
+        class="img-responsive-contain"
+      />
+    </div>
+    <div class="col-9 col-mob-8 padding5 floatLeft">
+      <ul class="top-menu">
+        <li>
+          <a href="https://www.gob.mx/gobierno" title="Gobierno">
+            <span>Gobierno</span>
+          </a>
+        </li>
+        <li>
+          <a href="https://www.participa.gob.mx/" title="Participa">
+            <span>Participa</span>
+          </a>
+        </li>
+        <li>
+          <a href="https://datos.gob.mx/" title="Datos">
+            <span>Datos</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="header-main">
+    <div class="container clearFix">
+      <div class="floatLeft col-mob-12">
+        <ul class="menu-logos clearFix">
+          <li>
+            <a href="https://www.gob.mx/" title="Gobierno">
+              <img
+                src="{{ url_for('static', filename='img/gobierno-de-mexico.png') }}"
+                alt="Gobierno de México"
+                class="img-responsive-contain"
+              />
+            </a>
+          </li>
+          <li>
+            <a href="https://www.gob.mx/sep" title="Educación">
+              <img
+                src="{{ url_for('static', filename='img/EDUCACIONLOGO.png') }}"
+                alt="Educación"
+                class="img-responsive-contain"
+              />
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://tecnm.mx/"
+              title="Tecnologico Nacional de Mexico"
+              class="logo"
+            >
+              <img
+                src="{{ url_for('static', filename='img/LogoTecNM.png') }}"
+                alt="Tecnologico Nacional de Mexico"
+                class="img-responsive-contain"
+              />
+            </a>
+          </li>
+          <li>
+            <a href="/" title="Inicio" class="logo">
+              <img
+                src="{{ url_for('static', filename='img/LOGO-ITCANCUN.png') }}"
+                alt="Educación"
+                class="img-responsive-contain"
+              />
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="floatRight desktop tablet">
+        <ul class="icon-menu">
+          <li>
+            <a
+              href="#"
+              title="Calendario Academico"
+            >
+              <span class="round-icon">
+                <i class="fa-regular fa-calendar-days"></i>
+              </span>
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://login.microsoftonline.com/?whr=tecnm.mx"
+              title="Correo Institucional"
+            >
+              <span class="round-icon">
+                <i class="fa-solid fa-envelope"></i>
+              </span>
+            </a>
+          </li>
+          <li>
+            <a href="/contacto" title="SGI Buzón de Quejas y Sugerencias">
+              <span class="round-icon">
+                <i class="fa-solid fa-comment-dots"></i>
+              </span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div style="background: #eee">
+    <nav class="container relative">
+      <div class="mobile floatLeft paddingAside20">
+        <ul class="icon-menu">
+          <li>
+            <a href="/" title="Inicio" class="round-icon floatLeft">
+              <i class="fa-solid fa-house"></i>
+            </a>
+          </li>
+          <li>
+            <a
+              href="#"
+              title="Calendario Academico"
+            >
+              <span class="round-icon">
+                <i class="fa-regular fa-calendar-days"></i>
+              </span>
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://login.microsoftonline.com/?whr=tecnm.mx"
+              title="Correo Institucional"
+            >
+              <span class="round-icon">
+                <i class="fa-solid fa-envelope"></i>
+              </span>
+            </a>
+          </li>
+          <li>
+            <a href="/contacto" title="SGI Buzón de Quejas y Sugerencias">
+              <span class="round-icon">
+                <i class="fa-solid fa-comment-dots"></i>
+              </span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <span class="tog-sup-menu floatRight paddingTB5">
+        <span
+          style="
+            font-size: 14px;
+            display: inline-block;
+            vertical-align: middle;
+          "
+          >Menú</span
+        >
+        <i class="fa-solid fa-bars"></i>
+      </span>
+      <div class="clearFloat"></div>
+      <ul class="superior-menu">
+        <li class="dropdown">
+          <div class="clearFix">
+            <span
+              title="Estudiantes"
+              class="floatLeft"
+              style="cursor: default"
+            >
+              Estudiantes
+            </span>
+            <div class="menucollapse floatRight">
+              <i class="fa-solid fa-caret-down"></i>
+            </div>
+          </div>
+          <ul class="submenu white-bg">
+            <li>
+              <a
+                href="http://sie.cancun.tecnm.mx/cgi-bin/sie.pl?Opc=PINDEXESTUDIANTE&psie=intertec&dummy=0"
+                target="_blank"
+                >Portal SIE Alumnos</a
+              >
+            </li>
+            <li>
+              <a
+                href="{{ url_for('login') }}"
+                target="_blank"
+                >Portal SIIMMSE</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                target="_blank"
+                >Tutorías</a
+              >
+            </li>
+            <li>
+              <a href="#" target="_self"
+                >Servicios Escolares</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                target="_self"
+                >Servicio social / Prácticas profesionales</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                target="_self"
+                >Creación de correo Institucional</a
+              >
+            </li>
+            <li>
+              <a href="#" target="_self"
+                >Movilidad Estudiantil</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                target="_self"
+                >Coordinación de Lenguas Extranjeras</a
+              >
+            </li>
+            <li>
+              <a href="#" target="_self"
+                >Reglamento</a
+              >
+            </li>
+            <li>
+              <a href="#" target="_self"
+                >Capítulos Estudiantiles</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                target="_self"
+                >Equivalencias</a
+              >
+            </li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <div class="clearFix">
+            <span
+              title="Docentes"
+              class="floatLeft"
+              style="cursor: default"
+            >
+              Docentes
+            </span>
+            <div class="menucollapse floatRight">
+              <i class="fas fa-caret-down" aria-hidden="true"></i>
+            </div>
+          </div>
+          <ul class="submenu white-bg">
+            <li>
+              <a
+                href="http://sie.cancun.tecnm.mx/cgi-bin/sie.pl?Opc=PINDEXDOCENTE&psie=intertec&dummy=0"
+                target="_blank"
+                >Portal SIE Docentes</a
+              >
+            </li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <div class="clearFix">
+            <span
+              title="Egresados"
+              class="floatLeft"
+              style="cursor: default"
+            >
+              Egresados
+            </span>
+            <div class="menucollapse floatRight">
+              <i class="fas fa-caret-down" aria-hidden="true"></i>
+            </div>
+          </div>
+          <ul class="submenu white-bg">
+            <li>
+              <a
+                href="#"
+                target="_self"
+                >Trámite de Certificado de Término de Estudios</a
+              >
+            </li>
+            <li>
+              <a href="#" target="_self"
+                >Titulación</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://www.tecnm.mx/?vista=Certificacion"
+                target="_blank"
+                >Certificación y apostille de documentos oficiales</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                target="_self"
+                >Coordinación de Lenguas Extranjeras CLE</a
+              >
+            </li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <div class="clearFix">
+            <span
+              title="Estadística"
+              class="floatLeft"
+              style="cursor: default"
+            >
+              Estadística
+            </span>
+            <div class="menucollapse floatRight">
+              <i class="fas fa-caret-down" aria-hidden="true"></i>
+            </div>
+          </div>
+          <ul class="submenu white-bg">
+            <li>
+              <a href="#" target="_self"
+                >Prontuarios</a
+              >
+            </li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <div class="clearFix">
+            <span
+              title="Transparencia"
+              class="floatLeft"
+              style="cursor: default"
+            >
+              Transparencia
+            </span>
+            <div class="menucollapse floatRight">
+              <i class="fas fa-caret-down" aria-hidden="true"></i>
+            </div>
+          </div>
+          <ul class="submenu white-bg">
+            <li>
+              <a href="#" target="_self"
+                >Rendición de cuentas</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                target="_self"
+                >Rendición de cuentas conclusión de la administración
+                20xx-20xx</a
+              >
+            </li>
+            <li>
+              <a href="#" target="_self"
+                >PIA ITCancun</a
+              >
+            </li>
+            <li>
+              <a href="#" target="_self"
+                >PIID ITCancun 20xx-20xx</a
+              >
+            </li>
+            <li>
+              <a href="#" target="_self"
+                >PDI ITCancun 20xx-20xx</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://www.tecnm.mx/?vista=Programa_Institucional"
+                target="_blank"
+                >PDI TecNM</a
+              >
+            </li>
+            <li>
+              <a href="/categoria/38/pta-tecnm" target="_self">PTA TecNM</a>
+            </li>
+            <li>
+              <a
+                href="https://www.tecnm.mx/?vista=Normateca"
+                target="_blank"
+                >Normativos TecNM</a
+              >
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  </div>
+
+  <div class="header-menu">
+    <nav class="container relative">
+      <span class="mobile-toggle floatLeft paddingTB5">
+        <i class="fa-solid fa-bars"></i>
+        <span
+          style="
+            font-size: 14px;
+            display: inline-block;
+            vertical-align: middle;
+          "
+          >Menú Principal</span
+        >
+      </span>
+      <div class="clearFloat"></div>
+      <ul class="main-menu">
+        <li class="clearFix not_mobile">
+          <a href="/" title="Inicio" class="logo floatLeft">
+            <i class="fas fa-home-lg-alt" aria-hidden="true"></i>
+          </a>
+        </li>
+
+        <li class="dropdown">
+          <div class="clearFix">
+            <span
+              title="Conócenos"
+              class="floatLeft"
+              style="cursor: default"
+            >
+              Conócenos
+            </span>
+            <div class="menucollapse floatRight">
+              <i class="fas fa-caret-down" aria-hidden="true"></i>
+            </div>
+          </div>
+          <ul class="submenu">
+            <li>
+              <a href="#" target="_self"
+                >Quiénes somos</a
+              >
+            </li>
+            <li>
+              <a href="#" target="_self">Director</a>
+            </li>
+            <li>
+              <a href="#" target="_self"
+                >Organigrama</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                target="_self"
+                >Directorio para descargar</a
+              >
+            </li>
+            <li>
+              <a href="#" title="Directorio">Directorio</a>
+            </li>
+          </ul>
+        </li>
+
+        <li class="dropdown">
+          <div class="clearFix">
+            <span
+              title="Admisión"
+              class="floatLeft"
+              style="cursor: default"
+            >
+              Admisión
+            </span>
+            <div class="menucollapse floatRight">
+              <i class="fas fa-caret-down" aria-hidden="true"></i>
+            </div>
+          </div>
+          <ul class="submenu">
+            <li>
+              <a
+                href="#"
+                target="_self"
+                >Convocatoria nuevo ingreso escolarizado</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                target="_self"
+                >Convocatoria nuevo ingreso distancia</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                target="_self"
+                >Convocatoria nuevo ingreso posgrado</a
+              >
+            </li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <div class="clearFix">
+            <span
+              title="Oferta Educativa"
+              class="floatLeft block"
+              style="cursor: default"
+            >
+              Oferta Educativa
+            </span>
+            <div class="menucollapse floatRight">
+              <i class="fas fa-caret-down" aria-hidden="true"></i>
+            </div>
+          </div>
+          <ul class="submenu">
+            <li><a href="#">Ingenierías</a></li>
+            <li>
+              <a href="#"
+                >Maestria y Doctorado</a
+              >
+            </li>
+            <li>
+              <a href="#"
+                >Educación a distancia</a
+              >
+            </li>
+          </ul>
+        </li>
+
+        <li class="dropdown">
+          <div class="clearFix">
+            <span
+              title="Recursos Virtuales"
+              class="floatLeft"
+              style="cursor: default"
+            >
+              Recursos Virtuales
+            </span>
+            <div class="menucollapse floatRight">
+              <i class="fas fa-caret-down" aria-hidden="true"></i>
+            </div>
+          </div>
+          <ul class="submenu">
+            <li>
+              <a href="#" target="_self"
+                >Bibliotecas digitales</a
+              >
+            </li>
+            <li>
+              <a href="#" target="_blank"
+                >Moodle Escolarizado</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                target="_blank"
+                >Moodle eDistancia</a
+              >
+            </li>
+          </ul>
+        </li>
+
+        <li class="dropdown">
+          <div class="clearFix">
+            <span
+              title="Áreas de interés"
+              class="floatLeft"
+              style="cursor: default"
+            >
+              Áreas de interés
+            </span>
+            <div class="menucollapse floatRight">
+              <i class="fas fa-caret-down" aria-hidden="true"></i>
+            </div>
+          </div>
+          <ul class="submenu">
+            <li>
+              <a href="#" target="_self"
+                >Centro de Información</a
+              >
+            </li>
+            <li>
+              <a href="#" target="_self"
+                >Vinculación</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                target="_self"
+                >Medios de verificación posgrado</a
+              >
+            </li>
+          </ul>
+        </li>
+
+        <li class="dropdown">
+          <div class="clearFix">
+            <a
+              href="#"
+              title="Convocatorias"
+              target="_self"
+              class="pointer floatLeft block"
+            >
+              Convocatorias
+            </a>
+          </div>
+        </li>
+        <li class="clearFix">
+          <a href="#" class="floatLeft" title="Noticias">
+            Noticias
+          </a>
+        </li>
+
+        <li class="main-item clearFix">
+          <a
+            href="#"
+            title="Preguntas Frecuentes"
+            class="floatLeft"
+          >
+            Preguntas Frecuentes
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<!-- cards section -->
+<section class="cards-wrapper">
+  <div class="card-grid-space">
+    <div class="num"></div>
+    <a class="card" href="https://www.cancun.tecnm.mx/instituto-tecnologico-de-cancun-se-va-al-nacional-en-innovatecnm-2022/" style="--bg-img: url('/static/img/10.png')">
+      <div>
+        <h1>INNOVATECNM 2022</h1>
+        <p>#TecNMCampusCancúnInforma El día de hoy en punto de las 9:00 horas se llevó a cabo la ceremonia de entrega de uniformes a la delegación de […]</p>
+        <div class="date">21 Octubre 2022</div>
+        <div class="tags">
+          <div class="tag">ITCancun</div>
+        </div>
+      </div>
+    </a>
+  </div>
+  <div class="card-grid-space">
+    <div class="num"></div>
+    <a class="card" href="https://www.cancun.tecnm.mx/elaboracion-del-programa-de-trabajo-anual-pta-2023/" style="--bg-img: url('/static/img/1-2.png')">
+      <div>
+        <h1>Programa de Trabajo Anual (PTA) 2023</h1>
+        <p>#TecNMCampusCancúnInforma El día de hoy en punto de las 10:00 horas se dio inicio el curso a los jefes de departamento para la elaboración del […]</p>
+        <div class="date">21 Octubre 2022</div>
+        <div class="tags">
+          <div class="tag">ITCancun</div>
+        </div>
+      </div>
+    </a>
+  </div>
+  <div class="card-grid-space">
+    <div class="num"></div>
+    <a class="card" href="https://www.cancun.tecnm.mx/coding-cup-tecnm-2022-iv-edicion/" style="--bg-img: url('/static/img/7.png')">
+      <div>
+        <h1>Coding Cup TecNM 2022, IV Edición</h1>
+        <p>#TecNMCampusCancúnInforma El día de hoy en punto de las 9:00 horas dio inicio el concurso de programación Coding Cup TecNM 2022, IV Edición. Resolviendo diversas […]</p>
+        <div class="date">12 July 2022</div>
+        <div class="tags">
+          <div class="tag">ITCancun</div>
+        </div>
+      </div>
+    </a>
+  </div>
+</section>
+<!-- footer -->
+<footer class="footer" style="background-image:url('static/img/footer_back.jpg');">
+    <div class="group-1">
+      <div class="box">
+        <figure>
+          <a href="https://www.gob.mx/">
+            <img src="{{ url_for('static', filename='img/gobmx_logo2.png') }}" alt="Escudo Gobierno de México">
+          </a>
+        </figure>
+      </div>
+      <div class="box">
+        <h2>SOBRE NOSOTROS</h2>
+        <p> blablabla bla </p>
+        <p> blablabla bla </p>
+      </div>
+      <div class="box">
+        <h2>SIGUENOS</h2>
+        <div class="red-social">
+          <div class="icons">
+            <a href="#" class="icon icon--instagram">
+              <i class="fa fa-instagram"></i>
+            </a>
+            <a href="#" class="icon icon--twitter">
+              <i class="fa fa-twitter"></i>
+            </a>
+            <a href="#" class="icon icon--facebook">
+              <i class="fa fa-facebook"></i>
+            </a>
+            <a href="#" class="icon icon--youtube">
+              <i class="fa fa-youtube"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="group-2">
+      <small>
+        &copy; 2022 <b>Sistema Integral de IMMS Estudiantil</b> - Algunos Derechos Reservados.
+      </small>
+    </div>
+  </footer>
+{% endblock %}
+{% block javascript %}
+{% endblock %}
