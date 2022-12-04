@@ -2,7 +2,7 @@ from flask import render_template, request
 import conf_server
 import os
 #from crypt import methods
-ON_HEROKU = os.environt.get('ON_HEROKU')
+ON_HEROKU = os.environ.get('ON_HEROKU')
 
 if ON_HEROKU:
     port = int(os.environ.get('PORT', 17995)) # as per OP comments default is 17995
