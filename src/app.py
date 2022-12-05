@@ -1,9 +1,9 @@
 from flask import render_template, request
-import conf_server
+import conf
 import os
 #from crypt import methods
 
-app = conf_server.connex_app
+app = conf.connex_app
 
 
 @app.route("/")
@@ -25,6 +25,6 @@ def form():
 def home():
     return render_template('home.html')
 
-# if __name__ == "__main__":
-#     port = int(os.environ.get('PORT', 8000))
-#     app.run(host="0.0.0.0", port=port, debug=True)
+if __name__ == "__main__":
+    port = int(os.environ.get('PORT', 8000))
+    app.run(host="0.0.0.0", port=port, debug=True)
