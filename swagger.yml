@@ -1,0 +1,101 @@
+openapi: 3.0.0
+info:
+  title: "SIIMMSE REST API"
+  description: "API for users access"
+  version: "1.0.0"
+
+servers:
+  - url: "/api"
+
+components:
+  schemas:
+    User:
+      type: "object"
+      required:
+        - control_number
+      properties:
+        names:
+          type: "string"
+        fathers_lastname:
+          type: "string"
+        mothers_lastname:
+          type: "string"
+        email:
+          type: "string"
+        passwor:
+          type: "string"
+        datebirth:
+          type: "string"
+  parameters:
+    control_number:
+      name: "control_number"
+      description: "Student's control number"
+      in: path
+      required: true
+      schema:
+        type: "integer"
+# API endpoints
+
+paths:
+  /users:
+    get:
+      operationId: "users.read_all"
+      tags:
+        - "Users"
+      summary: "Read the list of Users"
+      responses:
+        "200":
+          description: "Succesfully read users list"
+    post:
+      operationId: "users.create"
+      tags:
+        - "Users"
+      summary: "Create a user"
+      requestBody:
+        description: "User to create"
+        required: true
+        content:
+          application/json:
+            schema:
+              x-body-name: "user"
+              $ref: "#/components/schemas/User"
+      responses:
+        "201":
+          description: "Successfully created user"
+  /users/{control_number}:
+    get:
+      operationId: "users.read_one"
+      tags:
+        - "Users"
+      summary: "Read one User"
+      parameters:
+        - $ref: "#/components/parameters/control_number"
+      responses:
+        "200":
+          description: "Successfully readed user"
+    put:
+      operationId: "users.update"
+      tags:
+        - "Users"
+      summary: "Update a user"
+      parameters:
+        - $ref: "#/components/parameters/control_number"
+      responses:
+        "200":
+          description: "Successfully updated person"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              x-body-name: "user"
+              $ref: "#/components/schemas/User"
+    delete:
+      operationId: "users.delete"
+      tags:
+        - "Users"
+      summary: "Delete a user"
+      parameters:
+        - $ref: "#/components/parameters/control_number"
+      responses:
+        "204":
+          description: "Successfully deleted user"
