@@ -1,9 +1,11 @@
-from flask import render_template, request
+from flask import render_template
+from models.UsersModel import User
 import conf
 import os
 #from crypt import methods
 
 app = conf.connex_app
+app.add_api(conf.base_dir / "swagger.yml")
 
 
 @app.route("/")

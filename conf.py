@@ -9,12 +9,12 @@ base_dir = pathlib.Path(__file__).parent.resolve()
 # uses the basedir variable to create the Connexion app 
 # instance and give it the path to the directory 
 # that contains your specification file.
-connex_app = connexion.App(__name__.split(".")[0], specification_dir=base_dir)
+connex_app = connexion.App(__name__, specification_dir=base_dir)
 # creates a variable, app,
 # which is the Flask instance initialized by Connexion
 app = connex_app.app
 # tell SQLAlchemy to use SQLite as the database
-app.config["SQLALCHEMY_DATABASE_URI"] = f"sqlite:///{'..' / base_dir / 'database' / 'altaimms.sqlite'}"
+app.config["SQLALCHEMY_DATABASE_URI"] = f"sqlite:///{base_dir / 'database' / 'users_siimmse.sqlite'}"
 
 # turns the SQLAlchemy event system off. The event system 
 # generates events that are useful in event-driven programs, 

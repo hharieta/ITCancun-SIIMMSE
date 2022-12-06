@@ -14,6 +14,8 @@ components:
       required:
         - control_number
       properties:
+        control_number:
+          type: "integer"
         names:
           type: "string"
         fathers_lastname:
